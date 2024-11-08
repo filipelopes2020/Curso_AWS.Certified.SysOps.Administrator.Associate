@@ -1,0 +1,59 @@
+CURSO: AWS Certified SysOps Administrator Associate SOA-C02
+
+DOcumentação:
+	https://digitalcloud.training/aws-certified-sysops-adminstrator-associate-course-downloads/
+	
+	
+---- NOTAS -----	
+
+Apos criar a conta para o AWS
+
+0. No canto superior direito clicar no user (neste caso flopes.aws3) e depois em account
+
+1. Procurar "IAM user and role access to Billing information" nessa pagina
+
+2. Ir a https://us-east-1.console.aws.amazon.com/billing/home?region=us-east-1#/account e 
+	a) Clicar em "Activate IAM Access" + clicar no botao update
+
+3. Activar as billing preferences
+	https://us-east-1.console.aws.amazon.com/billing/home#/account
+	
+	
+	
+----
+
+Create Buget
+
+----
+Create access keys
+	https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/users/details/mario?section=security_credentials
+	
+	
+Abrir o powershell e dar o comando
+	aws configure
+	
+	usar os dados:
+		Escolher create "Access Key"
+		Access key: **********
+		Secret access key: ******************
+		
+	Criar um bucket (mas temos de usar um nome grande, caso contrario vai coicindir com algum de outra pessoa)
+		PS C:\Users\mario> aws configure
+		AWS Access Key ID [None]: *************
+		AWS Secret Access Key [None]: *********************
+		Default region name [None]: us-east-1
+		Default output format [None]:
+		PS C:\Users\mario> aws s3 ls
+		PS C:\Users\mario> aws s3 mb s3://testbucket123
+		make_bucket failed: s3://testbucket123 An error occurred (BucketAlreadyExists) when calling the CreateBucket operation: The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.
+		PS C:\Users\mario> aws s3 mb s3://mariotestbucket123
+		make_bucket: mariotestbucket123
+		PS C:\Users\mario> aws s3 ls
+		2024-11-04 20:18:53 mariotestbucket123
+		PS C:\Users\mario>
+	
+---
+	Abrir uma sessao de CloudShell
+	(usar: https://us-east-1.console.aws.amazon.com/cloudshell/home?region=us-east-1# )
+	
+	
